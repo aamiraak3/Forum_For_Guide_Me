@@ -46,11 +46,7 @@ h4
 {
 	text-align:center;
 }
-/*Sign Up Inputs*/
-#signup->input[type=text], #signup->input[type=password], #signup->input[type=submit], #signup->input[type=button]
-{
-	width:150px;
-}
+
 
 
 /*Sign in Inputs*/

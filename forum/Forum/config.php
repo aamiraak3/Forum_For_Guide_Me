@@ -12,7 +12,7 @@ $con = new MYSQLi('localhost', 'root', '', 'database_name');
 // mysql_select_db('database_name');
 
 //Username of the Administrator
-$admin='a';
+$admin='abs(number)';
 
 /******************************************************
 -----------------Optional Configuration----------------

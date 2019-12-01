@@ -3,7 +3,8 @@
 include('config.php');
 if(isset($_SESSION['username']))
 {
-	unset($_SESSION['username'], $_SESSION['userid']);
+	// echo "username is set";	
+		unset($_SESSION['username'], $_SESSION['userid']);
 	setcookie('username', '', time()-100);
 	setcookie('password', '', time()-100);
 
@@ -36,7 +37,7 @@ else
 		{
 			$form = false;
 			$_SESSION['username'] = $_POST['username'];
-			$_SESSION['userid'] = $dn['id'];
+			$_SESSION['userid'] = $dn['id'];		
 			if(isset($_POST['memorize']) and $_POST['memorize']=='yes')
 			{
 				$one_year = time()+(60*60*24*365);
@@ -55,8 +56,8 @@ else
     	<div class="header">
         	<a href="<?php echo $url_home; ?>"><img src="<?php echo $design; ?>/images/logo.png" alt="Forum" /></a>
 	    </div>
-<div class="message">You have successfully been logged.<br />
-<a href="<?php echo $url_home; ?>">Accueil</a></div>
+<div class="message">You have successfully been logged in.<br />
+<a href="<?php echo $url_home; ?>">Home</a></div>
 <?php
 		}
 		else
@@ -97,7 +98,7 @@ if(isset($message))
 ?>
 <div class="content">
 <!-- <?php
-$nb_new_pm = ($con->query('select count(*) as nb_new_pm from pm where ((user1="'.$_SESSION['userid'].'" and user1read="no") or (user2="'.$_SESSION['userid'].'" and user2read="no")) and id2="1"'))->fetch_assoc();
+$nb_new_pm = $con->query('select count(*) as nb_new_pm from pm where ((user1="'.$_SESSION['userid'].'" and user1read="no") or (user2="'.$_SESSION['userid'].'" and user2read="no")) and id2="1"')->fetch_assoc();
 $nb_new_pm = $nb_new_pm['nb_new_pm'];
 ?> -->
 
@@ -110,9 +111,10 @@ $nb_new_pm = $nb_new_pm['nb_new_pm'];
     	<a href="signup.php">Sign Up</a>  |  <a href="login.php">Login</a>
     </div>
     <div class="clean"></div>
-	<div class="box_right">
+	<!-- <!-- <div class="box_right">
+		<?php print_r($_SESSION)  ?>
     	<a href="list_pm.php">Your messages(<?php echo $nb_new_pm; ?>)</a> - <a href="profile.php?id=<?php echo $_SESSION['userid']; ?>"><?php echo htmlentities($_SESSION['username'], ENT_QUOTES, 'UTF-8'); ?></a> (<a href="login.php">Logout</a>)
-    </div>
+    </div> --> <s></s>
     <div class="clean"></div>
 </div>
     <form action="login.php" method="post">

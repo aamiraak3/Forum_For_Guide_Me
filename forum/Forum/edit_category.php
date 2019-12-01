@@ -5,8 +5,10 @@ if(isset($_GET['id']))
 {
 $id = intval($_GET['id']);
 $dn1 = $con->query('select count(id) as nb1, name, description from categories where id="'.$id.'" group by id')->fetch_assoc();
+echo $dn1['nb1'];
 if($dn1['nb1']>0)
 {
+
 if(isset($_SESSION['username']) and $_SESSION['username']==$admin)
 {
 ?>
@@ -45,8 +47,8 @@ if(isset($_POST['name'], $_POST['description']) and $_POST['name']!='')
 		$name = stripslashes($name);
 		$description = stripslashes($description);
 	}
-	$name = mysql_real_escape_string($name);
-	$description = mysql_real_escape_string($description);
+	$name = ($name);
+	$description = ($description);
 	if($con->query('update categories set name="'.$name.'", description="'.$description.'" where id="'.$id.'"'))
 	{
 	?>

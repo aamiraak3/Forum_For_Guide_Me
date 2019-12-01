@@ -30,7 +30,7 @@ $nb_new_pm = $nb_new_pm['nb_new_pm'];
     <div class="clean"></div>
 </div>
 <?php
-	if(isset($_POST['username'], $_POST['password'], $_POST['passverif'], $_POST['email'], $_POST['avatar']))
+	if(isset($_POST['username'], $_POST['password'], $_POST['passverif'], $_POST['email']))
 	{
 		if(get_magic_quotes_gpc())
 		{
@@ -38,7 +38,7 @@ $nb_new_pm = $nb_new_pm['nb_new_pm'];
 			$_POST['password'] = stripslashes($_POST['password']);
 			$_POST['passverif'] = stripslashes($_POST['passverif']);
 			$_POST['email'] = stripslashes($_POST['email']);
-			$_POST['avatar'] = stripslashes($_POST['avatar']);
+			// $_POST['avatar'] = stripslashes($_POST['avatar']);
 		}
 		if($_POST['password']==$_POST['passverif'])
 		{
@@ -49,11 +49,11 @@ $nb_new_pm = $nb_new_pm['nb_new_pm'];
 					$username = mysql_real_escape_string($_POST['username']);
 					$password = mysql_real_escape_string(sha1($_POST['password']));
 					$email = mysql_real_escape_string($_POST['email']);
-					$avatar = mysql_real_escape_string($_POST['avatar']);
+					// $avatar = mysql_real_escape_string($_POST['avatar']);
 					$dn = mysql_fetch_array(mysql_query('select count(*) as nb from users where username="'.$username.'"'));
 					if($dn['nb']==0 or $_POST['username']==$_SESSION['username'])
 					{
-						if(mysql_query('update users set username="'.$username.'", password="'.$password.'", email="'.$email.'", avatar="'.$avatar.'" where id="'.mysql_real_escape_string($_SESSION['userid']).'"'))
+						if(mysql_query('update users set username="'.$username.'", password="'.$password.'", email="'.$email.'" where id="'.mysql_real_escape_string($_SESSION['userid']).'"'))
 						{
 							$form = false;
 							unset($_SESSION['username'], $_SESSION['userid']);
@@ -122,7 +122,7 @@ $nb_new_pm = $nb_new_pm['nb_new_pm'];
 			$username = htmlentities($dnn['username'], ENT_QUOTES, 'UTF-8');
 			$password = '';
 			$email = htmlentities($dnn['email'], ENT_QUOTES, 'UTF-8');
-			$avatar = htmlentities($dnn['avatar'], ENT_QUOTES, 'UTF-8');
+			// $avatar = htmlentities($dnn['avatar'], ENT_QUOTES, 'UTF-8');
 		}
 ?>
     <form action="edit_profile.php" method="post">
@@ -132,7 +132,7 @@ $nb_new_pm = $nb_new_pm['nb_new_pm'];
             <label for="password">Password<span class="small">(6 characters min.)</span></label><input type="password" name="password" id="password" value="<?php echo $password; ?>" /><br />
             <label for="passverif">Password<span class="small">(verification)</span></label><input type="password" name="passverif" id="passverif" value="<?php echo $password; ?>" /><br />
             <label for="email">Email</label><input type="text" name="email" id="email" value="<?php echo $email; ?>" /><br />
-            <label for="avatar">Avatar<span class="small">(optional)</span></label><input type="text" name="avatar" id="avatar" value="<?php echo $avatar; ?>" /><br />
+            <!-- <label for="avatar">Avatar<span class="small">(optional)</span></label><input type="text" name="avatar" id="avatar" value="<?php echo $avatar; ?>" /><br /> -->
             <input type="submit" value="Submit" />
         </div>
     </form>
@@ -148,9 +148,10 @@ else
 	<form action="login.php" method="post">
 		<label for="username">Username</label><input type="text" name="username" id="username" /><br />
 		<label for="password">Password</label><input type="password" name="password" id="password" /><br />
-        <label for="memorize">Remember</label><input type="checkbox" name="memorize" id="memorize" value="yes" />
+        <!-- <label for="memorize">Remember</label><input type="checkbox" name="memorize" id="memorize" value="yes" /> -->
         <div class="center">
-	        <input type="submit" value="Login" /> <input type="button" onclick="javascript:document.location='signup.php';" value="Sign Up" />
+	        <input type="submit" value="Login" /> 
+	        <!-- <input type="button" onclick="javascript:document.location='signup.php';" value="Sign Up" /> -->
         </div>
     </form>
 </div>

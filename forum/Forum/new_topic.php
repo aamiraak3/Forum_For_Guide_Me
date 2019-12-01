@@ -49,7 +49,7 @@ if(isset($_POST['message'], $_POST['title']) and $_POST['message']!='' and $_POS
 	}
 	$title = ($title);
 	$message = (bbcode_to_html($message));
-	if($con->query('insert into topics (parent, id, id2, title, message, authorid, timestamp, timestamp2) select "'.$id.'", ifnull(max(id), 0)+1, "1", "'.$title.'", "'.$message.'", "'.$_SESSION['userid'].'", "'.time().'", "'.time().'" from topics'))
+	if($con->query('insert into topics (parent, id, id2, title, message, authorid, timestamp, timestamp2) select "'.$id.'", ifnull(max(id), 0)+1, "1", "'.$title.'", "'.$message.'", "'.$_SESSION['userid'].'", "'.time().'", "'.time().'" from topics')->fetch_assoc())
 	{
 	?>
 	<div class="message">The topic have successfully been created.<br />

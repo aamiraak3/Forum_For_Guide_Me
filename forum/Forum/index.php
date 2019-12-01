@@ -69,8 +69,8 @@ if(isset($_SESSION['username']) and $_SESSION['username']==$admin)
 <?php
 $dn1 = $con->query('select c.id, c.name, c.description, c.position, (select count(t.id) from topics as t where t.parent=c.id and t.id2=1) as topics, (select count(t2.id) from topics as t2 where t2.parent=c.id and t2.id2!=1) as replies from categories as c group by c.id order by c.position asc');
 $nb_cats = ($dn1->num_rows);
-while($dnn1 =($dn1)->fetch_assoc());
-{
+while($dnn1 =($dn1)->fetch_assoc())
+{   
 ?>
 	<tr>
     	<td class="forum_cat"><a href="list_topics.php?parent=<?php echo $dnn1['id']; ?>" class="title"><?php echo htmlentities($dnn1['name'], ENT_QUOTES, 'UTF-8'); ?></a>
@@ -103,17 +103,17 @@ if(isset($_SESSION['username']) and $_SESSION['username']==$admin)
 if(!isset($_SESSION['username']))
 {
 ?>
-<!-- <div class="box_login">
+<div class="box_login">
 	<form action="login.php" method="post">
 		<label for="username">Username</label><input type="text" name="username" id="username" /><br />
 		<label for="password">Password</label><input type="password" name="password" id="password" /><br />
-        <label for="memorize">Remember</label><input type="checkbox" name="memorize" id="memorize" value="yes" />
-        <div class="center">
+        <!-- <label for="memorize">Remember</label><input type="checkbox" name="memorize" id="memorize" value="yes" /> -->
+       <!--  <div class="center"> -->
 	        <input type="submit" value="Login" /> 
-            <input type="button" onclick="javascript:document.location='signup.php';" value="Sign Up" />
+            <!-- <input type="button" onclick="javascript:document.location='signup.php';" value="Sign Up" /> -->
         </div>
     </form>
-</div> -->
+</div>
 <?php
 }
 ?>

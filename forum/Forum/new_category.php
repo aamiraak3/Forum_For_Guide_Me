@@ -41,7 +41,7 @@ if(isset($_POST['name'], $_POST['description']) and $_POST['name']!='')
 	}
 	$name = ($name);
 	$description = ($description);
-	if($con->query('insert into categories (id, name, description, position) select ifnull(max(id), 0)+1, "'.$name.'", "'.$description.'", count(id)+1 from categories'))
+	if($con->query('insert into categories (id, name, description, position) select ifnull(max(id), 0)+1, "'.$name.'", "'.$description.'", count(id)+1 from categories')->fetch_assoc())
 	{
 	?>
 	<div class="message">The category have successfully been created.<br />

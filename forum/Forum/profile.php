@@ -47,9 +47,9 @@ else
 }
 if(isset($_GET['id']))
 {
-	$id = intval($_GET['id']);
-	$dn = $con->query('select username, email, avatar, signup_date from users where id="'.$id.'"');
-	if(($dn->num_rows) > 0 )
+	$id = ($_GET['id']);
+	$dn = $con->query('select username, email, signup_date from users where id="'.$id.'"');
+	if( (($dn)->num_rows) > 0 )
 	{
 		$dnn = ($dn)->fetch_assoc();
 ?>
@@ -65,14 +65,14 @@ if($_SESSION['userid']==$id)
 <table style="width:500px;">
 	<tr>
     	<td><?php
-if($dnn['avatar']!='')
-{
-	echo '<img src="'.htmlentities($dnn['avatar'], ENT_QUOTES, 'UTF-8').'" alt="Avatar" style="max-width:100px;max-height:100px;" />';
-}
-else
-{
-	echo 'This user has no avatar.';
-}
+// if($dnn['avatar']!='')
+// {
+// 	echo '<img src="'.htmlentities($dnn['avatar'], ENT_QUOTES, 'UTF-8').'" alt="Avatar" style="max-width:100px;max-height:100px;" />';
+// }
+// else
+// {
+// 	echo 'This user has no avatar.';
+// }
 ?></td>
     	<td class="left"><h1><?php echo htmlentities($dnn['username'], ENT_QUOTES, 'UTF-8'); ?></h1>
     	Email: <?php echo htmlentities($dnn['email'], ENT_QUOTES, 'UTF-8'); ?><br />
