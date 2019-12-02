@@ -36,7 +36,7 @@
             <a class="nav-link" href="index.html"></span>Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="forum.html">Forum</a>
+            <a class="nav-link" href="/forum/index.php">Forum</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about.html">About</a>
