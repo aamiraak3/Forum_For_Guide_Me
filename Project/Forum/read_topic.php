@@ -19,9 +19,9 @@ if(isset($_GET['id']))
             <title><?php echo htmlentities($dn1['title'], ENT_QUOTES, 'UTF-8'); ?> - <?php echo htmlentities($dn1['name'], ENT_QUOTES, 'UTF-8'); ?> - Forum</title>
         </head>
         <body>
-         <div class="header">
+         <!-- <div class="header">
              <a href="<?php echo $url_home; ?>"><img src="<?php echo $design; ?>/images/logo.png" alt="Forum" /></a>
-         </div>
+         </div> -->
          <div class="content">
             <?php
             if(isset($_SESSION['username']))
@@ -63,7 +63,7 @@ if(isset($_GET['id']))
         <a href="new_reply.php?id=<?php echo $id; ?>" class="button">Reply</a>
         <?php
     }
-    $dn2 = $con->query('select t.id2, t.authorid, t.message, t.timestamp, u.username as author, u.avatar from topics as t, users as u where t.id="'.$id.'" and u.id=t.authorid order by t.timestamp asc');
+    $dn2 = $con->query('select t.id2, t.authorid, t.message, t.timestamp, u.username as author,from topics as t, users as u where t.id="'.$id.'" and u.id=t.authorid order by t.timestamp asc');
     ?>
     <table class="messages_table">
      <tr>
@@ -76,10 +76,6 @@ if(isset($_GET['id']))
         ?>
         <tr>
          <td class="author center"><?php
-         if($dnn2['avatar']!='')
-         {
-             echo '<img src="'.htmlentities($dnn2['avatar']).'" alt="Image Perso" style="max-width:100px;max-height:100px;" />';
-         }
          ?><br /><a href="profile.php?id=<?php echo $dnn2['authorid']; ?>"><?php echo $dnn2['author']; ?></a></td>
          <td class="left"><?php if(isset($_SESSION['username']) and ($_SESSION['username']==$dnn2['author'] or $_SESSION['username']==$admin)){ ?><div class="edit"><a href="edit_message.php?id=<?php echo $id; ?>&id2=<?php echo $dnn2['id2']; ?>"><img src="<?php echo $design; ?>/images/edit.png" alt="Edit" /></a></div><?php } ?><div class="date">Date sent: <?php echo date('Y/m/d H:i:s' ,$dnn2['timestamp']); ?></div>
             <div class="clean"></div>
@@ -103,9 +99,8 @@ else
      <form action="login.php" method="post">
       <label for="username">Username</label><input type="text" name="username" id="username" /><br />
       <label for="password">Password</label><input type="password" name="password" id="password" /><br />
-      <label for="memorize">Remember</label><input type="checkbox" name="memorize" id="memorize" value="yes" />
       <div class="center">
-         <input type="submit" value="Login" /> <input type="button" onclick="javascript:document.location='signup.php';" value="Sign Up" />
+         <input type="submit" value="Login" /> 
      </div>
  </form>
 </div>

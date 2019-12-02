@@ -16,19 +16,14 @@ include('config.php');
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <!-- <title>Guide Me | Home</title> -->
-
     <!-- Bootstrap core CSS -->
-    <link href="/Project/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="/Project/Static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template -->
-    <link href="/Project/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/Project/Static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
     <!-- Custom styles for this template -->
-    <link href="/Project/css/clean-blog.min.css" rel="stylesheet">
+    <link href="/Project/Static/css/clean-blog.min.css" rel="stylesheet">
     <!-- ///////////////////////////////////////////// -->
 </head>
 <body>
@@ -75,7 +70,6 @@ include('config.php');
 </div>
 </div>
 </nav>
-
 <!-- Page Header -->
 <header class="masthead" style="background-image: url('/Project/img/forum-bg.png')">
     <div class="overlay"></div>
@@ -90,17 +84,7 @@ include('config.php');
 </div>
 </div>
 </header>
-
 <!-- /////////////////////////////////////// -->
-
-
-
-    	<!-- <div class="header">
-        	<a href="<?php echo $url_home; ?>"><img src="<?php echo $design; ?>/images/logo.png" alt="Espace Membre" /></a>
-        </div> -->
-
-
-
         <?php
         if(isset($_POST['username'], $_POST['password'], $_POST['passverif'], $_POST['email']) and $_POST['username']!='')
         {
@@ -110,7 +94,6 @@ include('config.php');
               $_POST['password'] = stripslashes($_POST['password']);
               $_POST['passverif'] = stripslashes($_POST['passverif']);
               $_POST['email'] = stripslashes($_POST['email']);
-              // $_POST['avatar'] = stripslashes($_POST['avatar']);
           }
           if($_POST['password']==$_POST['passverif'])
           {
@@ -188,7 +171,6 @@ if($form) {
             <label for="password">Password<span class="small"><small><br>(6 characters min)</small></span></label><input type="password" name="password" required="true"/><br />
             <label for="passverif">Password<span class="small"><small><br>(verification)</small></span></label><input  type="password" name="passverif" required="true" /><br />
                 <label for="email">Email</label><input type="text" name="email" value="<?php if(isset($_POST['email'])){echo htmlentities($_POST['email'], ENT_QUOTES, 'UTF-8');} ?>" required="true"/><br />
-                <!-- <label for="avatar">Avatar<span class="small"><small><br>(optional)</small></span></label><input type="text" name="avatar" value="<?php if(isset($_POST['avatar'])){echo htmlentities($_POST['avatar'], ENT_QUOTES, 'UTF-8');} ?>" /><br /> -->
                 <input type="submit" value="Sign Up" />
             </div>
         </form>
@@ -196,9 +178,7 @@ if($form) {
     <?php
 }
 ?>
-
 <!-- ///////////////////////////////////////// -->
-
 <!-- Footer -->
 <footer>
     <div class="container">
@@ -235,19 +215,14 @@ if($form) {
 </div>
 </div>
 </footer>
-
 <!-- Bootstrap core JavaScript -->
-<script src="/Project/vendor/jquery/jquery.min.js"></script>
-<script src="/Project/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+<script src="/Project/Static/vendor/jquery/jquery.min.js"></script>
+<script src="/Project/Static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- Contact Form JavaScript -->
-<script src="/Project/js/jqBootstrapValidation.js"></script>
-<script src="/Project/js/contact_me.js"></script>
-
+<script src="/Project/Static/js/jqBootstrapValidation.js"></script>
+<script src="/Project/Static/js/contact_me.js"></script>
 <!-- Custom scripts for this template -->
-<script src="/Project/js/clean-blog.min.js"></script>
-
+<script src="/Project/Static/js/clean-blog.min.js"></script>
 <!-- //////////////////////////////////////////////////// -->
-
 </body>
 </html>

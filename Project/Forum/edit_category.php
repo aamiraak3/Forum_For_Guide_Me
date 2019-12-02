@@ -1,4 +1,4 @@
-<!-- *************************************************************************
+/Static<!-- *************************************************************************
 --------------This page let an administrator edit a category------------------
 ************************************************************************** -->
 
@@ -17,12 +17,6 @@ if(isset($_SESSION['username']) and $_SESSION['username']==$admin)
 ?>
 <!DOCTYPE>
 <html>
-    <!-- <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link href="<?php echo $design; ?>/style.css" rel="stylesheet" title="Style" />
-        <title>Edit a category - <?php echo htmlentities($dn1['name'], ENT_QUOTES, 'UTF-8'); ?> - Forum</title>
-    </head> -->
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="<?php echo $design; ?>/style_signup.css" rel="stylesheet" title="Style" />
@@ -32,22 +26,18 @@ if(isset($_SESSION['username']) and $_SESSION['username']==$admin)
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <!-- <title>Guide Me | Home</title> -->
-
     <!-- Bootstrap core CSS -->
-    <link href="/Project/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Project/Static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="/Project/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/Project/Static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
-    <link href="/Project/css/clean-blog.min.css" rel="stylesheet">
+    <link href="/Project/Static/css/clean-blog.min.css" rel="stylesheet">
     <!-- ///////////////////////////////////////////// -->
 </head>
-
 <body>
 <!-- /////////////////////////////////////// -->
   <!-- Navigation -->
@@ -92,7 +82,6 @@ if(isset($_SESSION['username']) and $_SESSION['username']==$admin)
 </div>
 </div>
 </nav>
-
 <!-- Page Header -->
 <header class="masthead" style="background-image: url('/Project/img/forum-bg.png')">
     <div class="overlay"></div>
@@ -110,9 +99,6 @@ if(isset($_SESSION['username']) and $_SESSION['username']==$admin)
 
 <!-- /////////////////////////////////////// -->
 
-    	<!-- <div class="header">
-        	<a href="<?php echo $url_home; ?>"><img src="<?php echo $design; ?>/images/logo.png" alt="Forum" /></a>
-	    </div> -->
         <div class="content">
 <?php
 $nb_new_pm = $con->query('select count(*) as nb_new_pm from pm where ((user1="'.$_SESSION['userid'].'" and user1read="no") or (user2="'.$_SESSION['userid'].'" and user2read="no")) and id2="1"')->fetch_assoc();
@@ -164,9 +150,7 @@ else
 }
 ?>
 		</div>
-
 <!-- ///////////////////////////////////////// -->
-
 <!-- Footer -->
 <footer>
     <div class="container">
@@ -205,19 +189,18 @@ else
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="/Project/vendor/jquery/jquery.min.js"></script>
-<script src="/Project/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/Project/Static/vendor/jquery/jquery.min.js"></script>
+<script src="/Project/Static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Contact Form JavaScript -->
-<script src="/Project/js/jqBootstrapValidation.js"></script>
-<script src="/Project/js/contact_me.js"></script>
+<script src="/Project/Static/js/jqBootstrapValidation.js"></script>
+<script src="/Project/Static/js/contact_me.js"></script>
 
 <!-- Custom scripts for this template -->
-<script src="/Project/js/clean-blog.min.js"></script>
+<script src="/Project/Static/js/clean-blog.min.js"></script>
 
 <!-- //////////////////////////////////////////////////// -->
-		
-	</body>
+</body>
 </html>
 <?php
 }

@@ -3,17 +3,11 @@
 ************************************************************************** -->
 
 <?php
-//This page let display the list of personnal message of an user
+
 include('config.php');
 ?>
 <!DOCTYPE>
 <html>
-<!-- <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="<?php echo $design; ?>/style.css" rel="stylesheet" title="Style" />
-    <title>Guide Me Forum | Personal Messages</title>
-</head> -->
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="<?php echo $design; ?>/style_signup.css" rel="stylesheet" title="Style" />
@@ -27,20 +21,17 @@ include('config.php');
     <!-- <title>Guide Me | Home</title> -->
 
     <!-- Bootstrap core CSS -->
-    <link href="/Project/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Project/Static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="/Project/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/Project/Static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
-    <link href="/Project/css/clean-blog.min.css" rel="stylesheet">
+    <link href="/Project/Static/css/clean-blog.min.css" rel="stylesheet">
     <!-- ///////////////////////////////////////////// -->
 </head>
-
-
-
 <body>
 <!-- /////////////////////////////////////// -->
   <!-- Navigation -->
@@ -87,7 +78,7 @@ include('config.php');
 </nav>
 
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('/Project/img/forum-bg.png')">
+<header class="masthead" style="background-image: url('/Project/Static/img/forum-bg.png')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -102,15 +93,6 @@ include('config.php');
 </header>
 
 <!-- /////////////////////////////////////// -->
-
-
-
-
-
-  
- <!--   <div class="header">
-       <a href="<?php echo $url_home; ?>"><img src="<?php echo $design; ?>/images/logo.png" alt="Forum" /></a>
-   </div> -->
    <div class="content">
     <?php
     if(isset($_SESSION['username']))
@@ -208,9 +190,8 @@ else
        <form action="login.php" method="post">
           <label for="username">Username</label><input type="text" name="username" id="username" /><br />
           <label for="password">Password</label><input type="password" name="password" id="password" /><br />
-          <label for="memorize">Remember</label><input type="checkbox" name="memorize" id="memorize" value="yes" />
           <div class="center">
-           <input type="submit" value="Login" /> <input type="button" onclick="javascript:document.location='signup.php';" value="Sign Up" />
+           <input type="submit" value="Login" />
        </div>
    </form>
 </div>
@@ -220,7 +201,6 @@ else
 </div>
 
 <!-- ///////////////////////////////////////// -->
-
 <!-- Footer -->
 <footer>
     <div class="container">
@@ -259,19 +239,15 @@ else
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="/Project/vendor/jquery/jquery.min.js"></script>
+<script src="/Project/Static/vendor/jquery/jquery.min.js"></script>
 <script src="/Project/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Contact Form JavaScript -->
-<script src="/Project/js/jqBootstrapValidation.js"></script>
-<script src="/Project/js/contact_me.js"></script>
+<script src="/Project/Static/js/jqBootstrapValidation.js"></script>
+<script src="/Project/Static/js/contact_me.js"></script>
 
 <!-- Custom scripts for this template -->
-<script src="/Project/js/clean-blog.min.js"></script>
-
+<script src="/Project/Static/js/clean-blog.min.js"></script>
 <!-- //////////////////////////////////////////////////// -->
-
-
-
 </body>
 </html>

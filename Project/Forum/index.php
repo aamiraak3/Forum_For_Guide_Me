@@ -7,41 +7,28 @@ include('config.php');
 ?>
 <!DOCTYPE>
 <html>
-    <!-- <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link href="<?php echo $design; ?>/style.css" rel="stylesheet" title="Style" />
-        <title>Guide Me Forum | Home</title>
-    </head> -->
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="<?php echo $design; ?>/style_signup.css" rel="stylesheet" title="Style" />
+    <link href="<?php echo $design; ?>/style.css" rel="stylesheet" title="Style" />
     <title>Guide Me Forum | Home</title>
     <!-- ///////////////////////////////////////////// -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <!-- <title>Guide Me | Home</title> -->
-
     <!-- Bootstrap core CSS -->
-    <link href="/Project/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Project/Static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="/Project/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/Project/Static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
-    <link href="/Project/css/clean-blog.min.css" rel="stylesheet">
+    <link href="/Project/Static/css/clean-blog.min.css" rel="stylesheet">
     <!-- ///////////////////////////////////////////// -->
 </head>
-
-
-
 <body>
-
 <!-- /////////////////////////////////////// -->
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -85,9 +72,8 @@ include('config.php');
 </div>
 </div>
 </nav>
-
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('/Project/img/forum-bg.png')">
+<header class="masthead" style="background-image: url('/Project/Static/img/forum-bg.png')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -103,14 +89,6 @@ include('config.php');
 
 <!-- /////////////////////////////////////// -->
 
-
-
-
-
-    <!-- 
-    	<div class="header">
-        	<a href="<?php echo $url_home; ?>"><img src="<?php echo $design; ?>/images/logo.png" alt="Forum" /></a>
-	    </div>  -->
         <div class="content"> 
 <?php
 if(isset($_SESSION['username']))
@@ -212,9 +190,7 @@ if(!isset($_SESSION['username']))
 <?php
 }
 ?>
-
 <!-- ///////////////////////////////////////// -->
-
 <!-- Footer -->
 <footer>
     <div class="container">
@@ -253,17 +229,16 @@ if(!isset($_SESSION['username']))
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="/Project/vendor/jquery/jquery.min.js"></script>
+<script src="/Project/Static/vendor/jquery/jquery.min.js"></script>
 <script src="/Project/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Contact Form JavaScript -->
-<script src="/Project/js/jqBootstrapValidation.js"></script>
-<script src="/Project/js/contact_me.js"></script>
+<script src="/Project/Static/js/jqBootstrapValidation.js"></script>
+<script src="/Project/Static/js/contact_me.js"></script>
 
 <!-- Custom scripts for this template -->
-<script src="/Project/js/clean-blog.min.js"></script>
+<script src="/Project/Static/js/clean-blog.min.js"></script>
 
 <!-- //////////////////////////////////////////////////// -->
-
-	</body>
+</body>
 </html>
