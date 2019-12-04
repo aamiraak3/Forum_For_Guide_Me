@@ -18,7 +18,7 @@ if($dn1['nb1']>0)
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="<?php echo $design; ?>/style_signup.css" rel="stylesheet" title="Style" />
-    <title>Guide Me Forum | Login</title>
+    <title>Guide Me Forum | New Reply</title>
     <!-- ///////////////////////////////////////////// -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -56,16 +56,16 @@ if($dn1['nb1']>0)
             <a class="nav-link" href="read_topic.php">Topics</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Categories</a>
+            <a class="nav-link" href="new_category.php">Categories</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="profile.php">Profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Replies</a>
+            <a class="nav-link" href="new_reply.php">Replies</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Messages</a>
+            <a class="nav-link" href="read_pm.php">Messages</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="users.php">Users</a>
@@ -89,7 +89,7 @@ if($dn1['nb1']>0)
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="page-heading">
-            <h1>Login</h1>
+            <h1>Reply</h1>
             <span class="subheading">Q & A | Reach Out People</span>
         </div>
     </div>

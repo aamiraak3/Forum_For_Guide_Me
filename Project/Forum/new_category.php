@@ -47,16 +47,16 @@ if(isset($_SESSION['username']) and $_SESSION['username']==$admin)
                 <a class="nav-link" href="read_topic.php">Topics</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Categories</a>
+                <a class="nav-link" href="new_category.php">Categories</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="profile.php">Profile</a>
+                <a class="nav-link" href="edit_category.php">Edit Categories</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Replies</a>
+                <a class="nav-link" href="delete_category.php">Delete Caregory</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Messages</a>
+                <a class="nav-link" href="move_category.php">Move Category</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="users.php">Users</a>
@@ -79,7 +79,7 @@ if(isset($_SESSION['username']) and $_SESSION['username']==$admin)
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="page-heading">
-            <h1>Login</h1>
+            <h1>New Category</h1>
             <span class="subheading">Q & A | Reach Out People</span>
         </div>
     </div>
@@ -113,7 +113,7 @@ if(isset($_SESSION['username']) and $_SESSION['username']==$admin)
               }
               $name = ($name);
               $description = ($description);
-              if($con->query('insert into categories (id, name, description, position) select ifnull(max(id), 0)+1, "'.$name.'", "'.$description.'", count(id)+1 from categories')->fetch_assoc())
+              if($con->query('insert into categories (id, name, description, position) select ifnull(max(id), 0)+1, "'.$name.'", "'.$description.'", count(id)+1 from categories'))
               {
                ?>
                <div class="message">The category have successfully been created.<br />

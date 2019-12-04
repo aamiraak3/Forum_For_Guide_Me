@@ -45,16 +45,16 @@ include('config.php');
             <a class="nav-link" href="read_topic.php">Topics</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Categories</a>
+            <a class="nav-link" href="new_category.php">Categories</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="profile.php">Profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Replies</a>
+            <a class="nav-link" href="new_reply.php">Replies</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Messages</a>
+            <a class="nav-link" href="read_pm.php">Messages</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="users.php">Users</a>
@@ -107,18 +107,20 @@ include('config.php');
                  
                     //         Confusion
 
-                    $dn = $con->query('select id from users where username="'.$username.'"');
+                    $dn = $con->query("select id from users where username='".$username."'");
+                    echo $username;
+                    print_r($dn);
                     if($dn->num_rows == 0)
                     {
                        $id = $dn->num_rows+1;
-                       if($con->query('insert into users(id, username, password, email, signup_date) values ('.$id.', "'.$username.'", "'.$password.'", "'.$email.'", "'.time().'")')) {
+                       if($con->query("insert into users(id, username, password, email, signup_date) values ('0', '".$username."', '".$password."', '".$email."', '".time()."')")) {
                           
                         $form = false;
                         ?>
                         <div class="message">Signed Up Successfully. You can now Log in.<br />
                           <a href="login.php">Log in</a></div>
 
-                          <?php header("Location:login.php?registered=true") ?>
+                          <!-- <?php header("Location:login.php?registered=true") ?> -->
                           <?php
                       }
                       else {

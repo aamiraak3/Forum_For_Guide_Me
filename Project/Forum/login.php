@@ -7,7 +7,7 @@ include('config.php');
 if(isset($_SESSION['username']))
 {
 	// echo "username is set";	
-		// unset($_SESSION['username'], $_SESSION['userid']);
+	unset($_SESSION['username'], $_SESSION['userid']);
 	setcookie('username', '', time()-100);
 	setcookie('password', '', time()-100);
 
@@ -58,7 +58,7 @@ if(isset($_SESSION['username']))
             <a class="nav-link" href="profile.php">Profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Replies</a>
+            <a class="nav-link" href="new_reply.php">Replies</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Messages</a>

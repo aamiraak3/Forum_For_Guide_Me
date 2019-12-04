@@ -1,4 +1,4 @@
-To use this forum system, you have to create the tables "users", "pm", "categories" and "topics" in the Data Base named as "database_name".
+To use this forum you have to create the tables "users", "pm", "categories" and "topics" in the Data Base named as "database_name".
 This is the SQL query to execute:
 
 -- 

@@ -19,9 +19,6 @@ if(isset($_GET['id']))
             <title><?php echo htmlentities($dn1['title'], ENT_QUOTES, 'UTF-8'); ?> - <?php echo htmlentities($dn1['name'], ENT_QUOTES, 'UTF-8'); ?> - Forum</title>
         </head>
         <body>
-         <!-- <div class="header">
-             <a href="<?php echo $url_home; ?>"><img src="<?php echo $design; ?>/images/logo.png" alt="Forum" /></a>
-         </div> -->
          <div class="content">
             <?php
             if(isset($_SESSION['username']))

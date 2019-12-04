@@ -9,7 +9,7 @@ include('config.php');
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="<?php echo $design; ?>/style.css" rel="stylesheet" title="Style" />
+    <link href="<?php echo $design; ?>/style_signup.css" rel="stylesheet" title="Style" />
     <title>Guide Me Forum | Home</title>
     <!-- ///////////////////////////////////////////// -->
     <meta charset="utf-8">
@@ -33,7 +33,7 @@ include('config.php');
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Guide Me Forum</a>
+      <a class="navbar-brand" href="index.php">Guide Me Forum</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -53,10 +53,10 @@ include('config.php');
             <a class="nav-link" href="profile.php">Profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Replies</a>
+            <a class="nav-link" href="new_reply.php">Replies</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Messages</a>
+            <a class="nav-link" href="list_pm.php">Messages</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="users.php">Users</a>
@@ -66,7 +66,10 @@ include('config.php');
         </li>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="login.php">Log In</a>
+            <a class="nav-link" href="login.php">LogIn</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Project/Static/index.html">Site</a>
         </li>
     </ul>
 </div>

@@ -11,7 +11,7 @@ $con = new MYSQLi('localhost', 'root', '', 'database_name');
 // mysql_select_db('database_name');
 
 //Username of the Administrator
-$admin='abs(number)';
+$admin= 'Aamir';//abs(number)';
 
 /******************************************************
 -----------------Optional Configuration----------------
