@@ -15,7 +15,7 @@ if($dn1['nb1']>0)
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="<?php echo $design; ?>/style_signup.css" rel="stylesheet" title="Style" />
+    <link href="<?php echo $design; ?>/style.css" rel="stylesheet" title="Style" />
     <title>Guide Me Forum | Topics</title>
     <!-- ///////////////////////////////////////////// -->
     <meta charset="utf-8">
@@ -134,7 +134,7 @@ if(isset($_SESSION['username']))
 	<a href="new_topic.php?parent=<?php echo $id; ?>" class="button">New Topic</a>
 <?php
 }
-$dn2 = $con->query('select t.id, t.title, t.authorid, u.username as author, count(r.id) as replies from topics as t left join topics as r on r.parent="'.$id.'" and r.id=t.id and r.id2!=1  left join users as u on u.id=t.authorid where t.parent="'.$id.'" and t.id2=1 group by t.id order by t.timestamp2 desc')->fetch_assoc();
+$dn2 = $con->query('select t.id, t.title, t.authorid, u.username as author, count(r.id) as replies from topics as t left join topics as r on r.parent="'.$id.'" and r.id=t.id and r.id2!=1  left join users as u on u.id=t.authorid where t.parent="'.$id.'" and t.id2=1 group by t.id order by t.timestamp2 desc');
 if(($dn2)->num_rows > 0)
 {
 ?>
@@ -184,19 +184,20 @@ else
 if(isset($_SESSION['username']))
 {
 ?>
-	<a href="new_topic.php?parent=<?php echo $id; ?>" class="button">New Topic</a>
+	<!-- <a href="new_topic.php?parent=<?php echo $id; ?>" class="button">New Topic</a> -->
 <?php
 }
 else
 {
 ?>
+<h4>Login For Complete access</h4>
 <div class="box_login">
 	<form action="login.php" method="post">
 		<label for="username">Username</label><input type="text" name="username" id="username" /><br />
 		<label for="password">Password</label><input type="password" name="password" id="password" /><br />
-        <label for="memorize">Remember</label><input type="checkbox" name="memorize" id="memorize" value="yes" />
+        <!-- <label for="memorize">Remember</label><input type="checkbox" name="memorize" id="memorize" value="yes" /> -->
         <div class="center">
-	        <input type="submit" value="Login" /> <input type="button" onclick="javascript:document.location='signup.php';" value="Sign Up" />
+	        <input type="submit" value="Login" /> <!-- <input type="button" onclick="javascript:document.location='signup.php';" value="Sign Up" /> -->
         </div>
     </form>
 </div>

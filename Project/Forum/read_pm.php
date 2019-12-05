@@ -9,7 +9,7 @@ include('config.php');
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="<?php echo $design; ?>/style_signup.css" rel="stylesheet" title="Style" />
+    <link href="<?php echo $design; ?>/style.css" rel="stylesheet" title="Style" />
     <title>Guide Me Forum | Read Messages</title>
     <!-- ///////////////////////////////////////////// -->
     <meta charset="utf-8">
@@ -91,9 +91,11 @@ include('config.php');
     if(isset($_GET['id']))
     {
         $id = intval($_GET['id']);
-        $req1 = $con->query('select title, user1, user2 from pm where id="'.$id.'" and id2="1"')->fetch_assoc();
-        $dn1 = ($req1)->fetch_assoc();
-        if(($req1)->num_rows ==1)
+        // $req1 = $con->query('select title, user1, user2 from pm where id="'.$id.'" and id2="1"')->num_rows;
+        $req1 = $con->query("select title, user1, user2 from pm where id='".$id."' and id2='1'")->fetch_assoc();
+        $dn1 = ($req1);
+        print_r($req1);
+        if($req1==0)
         {
             if($dn1['user1']==$_SESSION['userid'] or $dn1['user2']==$_SESSION['userid'])
             {
@@ -117,7 +119,7 @@ include('config.php');
                       $message = stripslashes($message);
                   }
                   $message = (nl2br(htmlentities($message, ENT_QUOTES, 'UTF-8')));
-                  if($con->query('insert into pm (id, id2, title, user1, user2, message, timestamp, user1read, user2read)values("'.$id.'", "'.( $req2 ->nrows + 1).'", "", "'.$_SESSION['userid'].'", "", "'.$message.'", "'.time().'", "", "")') ->fetch_assoc() and $con->query('update pm set user'.$user_partic.'read="yes" where id="'.$id.'" and id2="1"')->fetch_assoc())
+                  if($con->query('insert into pm (id, id2, title, user1, user2, message, timestamp, user1read, user2read)values("'.$id.'", "'.( intval($req2 ->nrows)+1).'", "", "'.$_SESSION['userid'].'", "", "'.$message.'", "'.time().'", "", "")') and $con->query('update pm set user'.$user_partic.'read="yes" where id="'.$id.'" and id2="1"'))
                   {
                     ?>
                     <div class="message">Your reply has successfully been sent.<br />
@@ -175,7 +177,7 @@ include('config.php');
                                <th>Message</th>
                            </tr>
                            <?php
-                           while($dn2 = ($req2)->fetch_assoc())
+                           while($dn2 = ($req2))
                            {
                             ?>
                             <tr>

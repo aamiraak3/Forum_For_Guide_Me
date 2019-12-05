@@ -123,11 +123,11 @@ if(isset($_POST['message'], $_POST['title']) and $_POST['message']!='' and $_POS
 	}
 	$title = ($title);
 	$message = (bbcode_to_html($message));
-	if($con->query('insert into topics (parent, id, id2, title, message, authorid, timestamp, timestamp2) select "'.$id.'", ifnull(max(id), 0)+1, "1", "'.$title.'", "'.$message.'", "'.$_SESSION['userid'].'", "'.time().'", "'.time().'" from topics')->fetch_assoc())
+	if($con->query('insert into topics (parent, id, id2, title, message, authorid, timestamp, timestamp2) select "'.$id.'", ifnull(max(id), 0)+1, "1", "'.$title.'", "'.$message.'", "'.$_SESSION['userid'].'", "'.time().'", "'.time().'" from topics'))
 	{
 	?>
 	<div class="message">The topic have successfully been created.<br />
-	<a href="list_topics.php?parent=<?php echo $id; ?>">Go to the forum</a></div>
+	<a href="list_topics.php?parent=<?php echo $id; ?>">Back to Topics</a></div>
 	<?php
 	}
 	else
@@ -139,8 +139,8 @@ else
 {
 ?>
 <form action="new_topic.php?parent=<?php echo $id; ?>" method="post">
-	<label for="title">Title</label><input type="text" name="title" id="title"  /><br />
-    <label for="message">Message</label><br />
+	<label for="title">Topic Title</label><input type="text" name="title" id="title"  /><br />
+    <label for="message">Description</label><br />
     <div class="message_buttons">
         <input type="button" value="Bold" onclick="javascript:insert('[b]', '[/b]', 'message');" /><!--
         --><input type="button" value="Italic" onclick="javascript:insert('[i]', '[/i]', 'message');" /><!--

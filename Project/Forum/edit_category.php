@@ -8,7 +8,7 @@ if(isset($_GET['id']))
 {
 $id = intval($_GET['id']);
 $dn1 = $con->query('select count(id) as nb1, name, description from categories where id="'.$id.'" group by id')->fetch_assoc();
-echo $dn1['nb1'];
+// echo $dn1['nb1'];
 if($dn1['nb1']>0)
 {
 

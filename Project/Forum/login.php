@@ -16,7 +16,7 @@ if(isset($_SESSION['username']))
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="<?php echo $design; ?>/style_signup.css" rel="stylesheet" title="Style" />
+    <link href="<?php echo $design; ?>/style.css" rel="stylesheet" title="Style" />
     <title>Guide Me Forum | Login</title>
     <!-- ///////////////////////////////////////////// -->
     <meta charset="utf-8">
@@ -121,7 +121,7 @@ else
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="<?php echo $design; ?>/style_signup.css" rel="stylesheet" title="Style" />
+    <link href="<?php echo $design; ?>/style.css" rel="stylesheet" title="Style" />
     <title>Guide Me Forum | Login</title>
     <!-- ///////////////////////////////////////////// -->
     <meta charset="utf-8">
@@ -218,7 +218,7 @@ else
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="<?php echo $design; ?>/style_signup.css" rel="stylesheet" title="Style" />
+    <link href="<?php echo $design; ?>/style.css" rel="stylesheet" title="Style" />
     <title>Guide Me Forum | Login</title>
     <!-- ///////////////////////////////////////////// -->
     <meta charset="utf-8">
@@ -310,7 +310,7 @@ if(isset($message))
 <!-- <?php
 $nb_new_pm = $con->query('select count(*) as nb_new_pm from pm where ((user1="'.$_SESSION['userid'].'" and user1read="no") or (user2="'.$_SESSION['userid'].'" and user2read="no")) and id2="1"')->fetch_assoc();
 $nb_new_pm = $nb_new_pm['nb_new_pm'];
-?> -->
+?> -->  
 
 <div class="box">
 	<div class="box_left">
@@ -321,10 +321,10 @@ $nb_new_pm = $nb_new_pm['nb_new_pm'];
     	<a href="signup.php">Sign Up</a>  |  <a href="login.php">Login</a>
     </div>
     <div class="clean"></div>
-	<!-- <div class="box_right">
+	 <!-- <div class="box_right">
 		<?php print_r($_SESSION)  ?>
     	<a href="list_pm.php">Your messages(<?php echo $nb_new_pm; ?>)</a> - <a href="profile.php?id=<?php echo $_SESSION['userid']; ?>"><?php echo htmlentities($_SESSION['username'], ENT_QUOTES, 'UTF-8'); ?></a> (<a href="login.php">Logout</a>)
-    </div> --> <s></s>
+    </div> -->  <s></s>
     <div class="clean"></div>
 </div>
     <form action="login.php" method="post">
@@ -332,7 +332,7 @@ $nb_new_pm = $nb_new_pm['nb_new_pm'];
         <div class="login">
             <label  for="username">Username</label><input type="text" name="username" id="username"/><br />
             <label for="password"style="margin-top: 4.5%;">Password  </label><input type="password" name="password" id="password" /><br />
-            <small for="memorize">Remember me</small><input type="checkbox" name="memorize" id="memorize" value="yes" /><br />
+            <input type="checkbox" name="memorize" id="memorize" value="yes" /><small for="memorize">Remember me</small><br />
             <input type="submit" value="Login"  />
 		</div>
     </form>

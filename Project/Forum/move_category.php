@@ -8,29 +8,30 @@ if(isset($_GET['id'], $_GET['action']) and ($_GET['action']=='up' or $_GET['acti
 {
 $id = intval($_GET['id']);
 $action = $_GET['action'];
-$dn1 = $con->query('select count(c.id) as nb1, c.position, count(c2.id) as nb2 from categories as c, categories as c2 where c.id="'.$id.'" group by c.id')->fetch_assoc();
-if($dn1['nb1']>0)
+$dn1 = $con->query("select count(c.id) as nb1, c.position, count(c2.id) as nb2 from categories as c, categories as c2 where c.id='".$id."' group by c.id")->fetch_assoc();
+print_r($dn1);
+if($dn1['nb1']> 0)
 {
-if(isset($_SESSION['username']) and $_SESSION['username']==$admin)
-{
-	if($action=='up')
+	if(isset($_SESSION['username']) and $_SESSION['username']==$admin)
 	{
-		if($dn1['position']>1)
+		if($action=='up')
 		{
-			if($con->query('update categories as c, categories as c2 set c.position=c.position-1, c2.position=c2.position+1 where c.id="'.$id.'" and c2.position=c.position-1'))
+			if($dn1['position']>1)
 			{
-				header('Location: '.$url_home);
+				if($con->query('update categories as c, categories as c2 set c.position=c.position-1, c2.position=c2.position+1 where c.id="'.$id.'" and c2.position=c.position-1'))
+				{
+					header('Location: '.$url_home);
+				}
+				else
+				{
+				echo 'An error occured while moving the category.';
+				}
 			}
 			else
 			{
-				echo 'An error occured while moving the category.';
+			echo '<h2>The action you want to do is impossible.</h2>';
 			}
 		}
-		else
-		{
-			echo '<h2>The action you want to do is impossible.</h2>';
-		}
-	}
 	else
 	{
 		if($dn1['position']<$dn1['nb2'])

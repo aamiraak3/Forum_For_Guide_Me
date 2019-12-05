@@ -122,11 +122,11 @@ if(isset($_POST['message']) and $_POST['message']!='')
 	{
 		$message = stripslashes($message);
 	}
-	$message = mysql_real_escape_string(bbcode_to_html($message));
-	if($con->query('insert into topics (parent, id, id2, title, message, authorid, timestamp, timestamp2) select "'.$dn1['parent'].'", "'.$id.'", max(id2)+1, "", "'.$message.'", "'.$_SESSION['userid'].'", "'.time().'", "'.time().'" from topics where id="'.$id.'"') ->fetch_assoc() and $con->query('update topics set timestamp2="'.time().'" where id="'.$id.'" and id2=1'))
+	$message = (bbcode_to_html($message));
+	if($con->query('insert into topics (parent, id, id2, title, message, authorid, timestamp, timestamp2) select "'.$dn1['parent'].'", "'.$id.'", max(id2)+1, "", "'.$message.'", "'.$_SESSION['userid'].'", "'.time().'", "'.time().'" from topics where id="'.$id.'"') and $con->query('update topics set timestamp2="'.time().'" where id="'.$id.'" and id2=1'))
 	{
 	?>
-	<div class="message">The message have successfully been sent.<br />
+	<div class="message">Reply successfully sent.<br />
 	<a href="read_topic.php?id=<?php echo $id; ?>">Go to the topic</a></div>
 	<?php
 	}
@@ -139,7 +139,7 @@ else
 {
 ?>
 <form action="new_reply.php?id=<?php echo $id; ?>" method="post">
-    <label for="message">Message</label><br />
+    <label for="message">Reply</label><br />
     <div class="message_buttons">
         <input type="button" value="Bold" onclick="javascript:insert('[b]', '[/b]', 'message');" /><!--
         --><input type="button" value="Italic" onclick="javascript:insert('[i]', '[/i]', 'message');" /><!--

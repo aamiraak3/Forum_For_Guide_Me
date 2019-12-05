@@ -9,7 +9,7 @@ include('config.php');
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="<?php echo $design; ?>/style_signup.css" rel="stylesheet" title="Style" />
+    <link href="<?php echo $design; ?>/style.css" rel="stylesheet" title="Style" />
     <title>Guide Me Forum | Home</title>
     <!-- ///////////////////////////////////////////// -->
     <meta charset="utf-8">
@@ -176,7 +176,7 @@ if(isset($_SESSION['username']) and $_SESSION['username']==$admin)
 if(isset($_SESSION['username']) and $_SESSION['username']==$admin)
 {
 ?>
-	<a href="new_category.php" class="button">New Category</a>
+	<!-- <a href="new_category.php" class="button">New Category</a> -->
 <?php
 }
 if(!isset($_SESSION['username']))
